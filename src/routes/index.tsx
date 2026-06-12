@@ -1,29 +1,44 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { About } from "@/components/About";
+import { Services } from "@/components/Services";
+import { Industries } from "@/components/Industries";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "1-Bureau | Accounting, Tax & Corporate Services Singapore" },
+      {
+        name: "description",
+        content:
+          "1-Bureau Private Limited provides professional accounting, corporate secretarial, taxation and payroll services for SMEs in Singapore since 2007.",
+      },
+      { property: "og:title", content: "1-Bureau Private Limited | Professional Consulting" },
+      {
+        property: "og:description",
+        content:
+          "Accounting, taxation, payroll and corporate secretarial services for small & medium businesses in Singapore.",
+      },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Industries />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
